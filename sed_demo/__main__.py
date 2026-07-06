@@ -128,7 +128,7 @@ class DemoApp(DemoFrontend):
         # 2. DL pretrained model to predict tags from ring buffer
         num_audioset_classes = len(all_labels)
         self.model = Cnn9_GMP_64x64(num_audioset_classes)
-        checkpoint = torch.load(model_path,
+        checkpoint = torch.load(model_path, weights_only=False,
                                 map_location=lambda storage, loc: storage)
         self.model.load_state_dict(checkpoint["model"])
         # 3. Inference: periodically read the input stream with the model        
