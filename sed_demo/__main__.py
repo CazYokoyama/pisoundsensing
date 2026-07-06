@@ -73,7 +73,9 @@ class DemoApp(DemoFrontend):
     BAR_COLOR = "#ffcc99"
 
     # Define the tags you want to search for on email notification
-    tags = ['Explosion', 'Baby cry, infant cry', 'Smoke detector, smoke alarm']
+    tags = ['Aircraft', 'Aircraft engine', 'Bird', 'Bus', 'Car', 'Car passing by', 'engine',
+            'Engine knocking', 'Engine starting', 'Helicopter', 'Motorcycle', 'Motor vehicle (road)',
+            'Vehicle']
     # Define the threshold value to send email notification
     pval_threshold = 0.5
     # Email addresses to send notifications
