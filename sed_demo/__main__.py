@@ -167,7 +167,7 @@ class DemoApp(DemoFrontend):
         data_list = re.findall(data_pattern, value)
         data = {
             'timestamp': timestamp,
-            'sounds': [{ 'label': label, 'confidence': float(confidence)} for label, confidence in data_list]
+            'sounds': [{ 'label': label, 'confidence': float(confidence.replace("np.float32(", "").replace(")", ""))} for label, confidence in data_list]
         }
         # Change the path here to save the file in /var/www/html
         file_path = '/var/www/html/sound_datalog.json'
