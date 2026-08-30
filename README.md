@@ -2,6 +2,8 @@
 
 Embedded general purpose, real-time sound recognition demo
 
+**Project case study:** https://gbibbo.github.io/work/raspberry-pi-sed/
+
 ![demo screenshot](sed_demo/assets/piss_logos.png)
 
 Welcome to our project's GitHub repository! [Our work](https://ai4s.surrey.ac.uk/) focuses on exploring the potential of audio event recognition using convolutional neural networks on edge devices, like Raspberry Pi, aiming to achieve real-time audio analysis and classification.
@@ -56,7 +58,7 @@ Paper: https://arxiv.org/abs/2306.09106
 
 #### 4. Verify the Burn: 
 
-* Once the burn is complete, verify that you can see the ‘boot’ partition on the microSD card using your file explorer. 
+* Once the burn is complete, verify that you can see the ‘boot’ partition on your microSD card using your file explorer. 
 
 #### 5. Initial Configuration (optional): 
 
