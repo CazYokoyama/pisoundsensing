@@ -130,7 +130,18 @@ class DemoApp(DemoFrontend):
         self.model = Cnn9_GMP_64x64(num_audioset_classes)
         checkpoint = torch.load(model_path, weights_only=False,
                                 map_location=lambda storage, loc: storage)
-        self.model.load_state_dict(checkpoint["model"])
+        _model_ = checkpoint["model"]
+        del _model_["spectrogram_extractor.stft.conv_real.weight"]
+        del _model_["spectrogram_extractor.stft.conv_imag.weight"]
+        del _model_["logmel_extractor.melW"]
+        del _model_["bn0.weight"]
+        del _model_["bn0.bias"]
+        del _model_["bn0.running_mean"]
+        del _model_["bn0.running_var"]
+        del _model_["bn0.num_batches_tracked"]
+        del _model_["fc1.weight"]
+        del _model_["fc1.bias"]
+        self.model.load_state_dict(_model_)
         # 3. Inference: periodically read the input stream with the model        
         self.inference = AudioModelInference(
             self.model, model_winsize, stft_hopsize, samplerate, stft_window,
