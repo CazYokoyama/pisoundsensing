@@ -9,7 +9,7 @@ echo "Script started at $(date)" >> /home/ai4s/pisoundsensing/sed_demo.log
 cd /home/ai4s/pisoundsensing
 
 # find the latest checkpoint file in PTH_DIR
-pth_file=`ls -v1 ${PTH_DIR}/*.pth | tail --lines=1`
+pth_file=${PTH_DIR}/'Cnn9_GMP_64x64_300000_iterations_mAP=0.37.pth?download=1'
 echo infere by ${pth_file}
 
 # Run sed_demo and log the output and errors
